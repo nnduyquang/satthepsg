@@ -1,0 +1,130 @@
+#ca_info {
+  .ca_info_detail {
+    h1.title {
+      font-size: 30px;
+      color: $main-color;
+      margin-bottom: 20px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    img.ca_info_intro_img {
+      height: 251px;
+      margin-bottom: 20px;
+    }
+    p.description {
+      line-height: 1.5;
+    }
+    .list-sub-category {
+      margin-bottom: 25px;
+      .one-product {
+        margin-top: 40px;
+        position: relative;
+        transition: all 0.2s;
+        img.ca_category_sub_item_img {
+          height: 157px;
+        }
+        h4.title-product {
+          a {
+            color: $main-color;
+          }
+          display: block;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          position: relative;
+          text-align: center;
+          margin: 15px auto 0;
+          letter-spacing: .1px;
+          width: 100%;
+          font-size: 14px;
+          font-weight: normal;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 1.38;
+          text-transform: uppercase;
+
+        }
+      }
+      .one-product:hover {
+        box-shadow: 0px 3px 13px 0px rgba(136, 136, 136, 0.25);
+      }
+    }
+    .list-product {
+      margin-bottom: 40px;
+      h3.title {
+        font-size: 25px;
+        color: $main-color;
+        font-weight: bold;
+        text-transform: capitalize;
+      }
+      .one-product {
+        margin-top: 40px;
+        position: relative;
+        transition: all 0.2s;
+        .img-product {
+          overflow: hidden;
+          img.ca_product_img {
+            transition: all 0.2s;
+            height: 188px;
+          }
+        }
+        .discount {
+          position: absolute;
+          color: white;
+          background-color: $sub-color;
+          padding: 0 10px;
+          height: 22px;
+          line-height: 22px;
+          margin-left: 5px;
+          left: 10px;
+          top: 20px;
+          font-size: 12px;
+        }
+        h4.title-product {
+          a {
+            color: $main-color;
+          }
+          display: block;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          position: relative;
+          text-align: center;
+          margin: 15px auto 0;
+          letter-spacing: .1px;
+          width: 100%;
+          font-size: 14px;
+          font-weight: normal;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 1.38;
+          text-transform: uppercase;
+
+        }
+        span.price-sale {
+          color: $sub-color;
+          line-height: 1.5;
+          font-weight: bold;
+        }
+        span.price-saving {
+          text-decoration: line-through;
+          line-height: 1.5;
+          color: #cccccc;
+          //display: block;
+        }
+        span.price-contact {
+          color: $sub-color;
+          font-size: 21px;
+          margin-top: 10px;
+          display: block;
+          text-align: center;
+          width: 100%;
+        }
+      }
+      .one-product:hover {
+        box-shadow: 0px 3px 13px 0px rgba(136, 136, 136, 0.25);
+        img.ca_product_img {
+          transform: scale(1.2, 1.2);
+        }
+      }
+    }
+  }
+}

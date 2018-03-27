@@ -1,0 +1,26 @@
+#h_introduce{
+  #h_introduce_left{
+    img.h_introduce_logo_img{
+      width: 60%;
+    }
+  }
+  #h_introduce_right{
+    h1.title{
+      font-size: 28px;
+      text-transform: uppercase;
+      color: $main-color;
+      font-weight: bold;
+      text-align: center;
+    }
+    p.description{
+      line-height: 1.5;
+      margin-top: 10px;
+    }
+  }
+  #h_introduce_bottom{
+    img.h_introduce_bar_img{
+      width: inherit;
+      margin-top: 10px;
+    }
+  }
+}
