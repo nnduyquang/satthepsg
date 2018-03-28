@@ -1,21 +1,33 @@
-#sidebar{
-  .one-item{
+#sidebar {
+  h3 {
+    background-color: $main-color;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: white;
+    font-weight: bold;
+    display: block;
+    padding: 10px;
+  }
+  .one-item {
     margin-bottom: 10px;
-    h3{
-      background-color: $main-color;
-      text-transform: uppercase;
-      font-size: 12px;
-      color: white;
-      font-weight: bold;
+    a.title {
       display: block;
       padding: 10px;
+      color: black;
+      text-transform: uppercase;
+      border-bottom: 1px solid #d6d6d6;
+      border-left: 1px solid #d6d6d6;
+      border-right: 1px solid #d6d6d6;
+      border-top: 1px solid #d6d6d6;
+      font-weight: bolder;
     }
-    ul.ul-normal{
+    ul.ul-normal {
       display: block;
       box-shadow: 0px 3px 13px 0px rgba(136, 136, 136, 0.25);
       list-style: none;
-      li.li-normal,li.has-sub-item{
-        a{
+
+      li.li-normal, li.has-sub-item {
+        a {
           color: $main-color-sub;
           display: block;
           padding: 10px;
@@ -25,7 +37,7 @@
           transition: all 0.2s;
           font-size: 14px;
         }
-        a:hover{
+        a:hover {
           padding-left: 20px;
         }
       }
@@ -44,7 +56,7 @@
             display: block;
             //padding-left: 10px;
             transition: all 0.2s;
-            a{
+            a {
               border: none;
               border-top: 1px solid #d6d6d6;
               border-bottom: 1px solid #d6d6d6;
@@ -62,15 +74,15 @@
         opacity: 1;
       }
     }
-    ul.ul-ht-info{
+    ul.ul-ht-info {
       display: block;
       box-shadow: 0px 3px 13px 0px rgba(136, 136, 136, 0.25);
       list-style: none;
-      li{
+      li {
         padding: 10px;
       }
     }
-    img.sidebar-img{
+    img.sidebar-img {
       border: 1px solid $main-color;
     }
   }

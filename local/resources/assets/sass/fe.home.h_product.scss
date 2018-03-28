@@ -13,7 +13,7 @@
     .list-product {
       margin-bottom: 25px;
       .one-product {
-        margin-top: 40px;
+        margin-top: 20px;
         position: relative;
         transition: all 0.2s;
         .img-product {
@@ -83,6 +83,17 @@
           transform: scale(1.2, 1.2);
         }
       }
+    }
+    a.btn-more {
+      display: block;
+      padding: 10px;
+      border: 1px solid $main-color-sub;
+      color: $main-color;
+      transition: all 0.2s;
+    }
+    a.btn-more:hover {
+      background-color: $main-color;
+      color: white;
     }
   }
 }

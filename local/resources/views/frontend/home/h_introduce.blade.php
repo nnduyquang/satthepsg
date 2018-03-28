@@ -26,8 +26,31 @@
                     SẼ ĐEM ĐẾN CHO KHÁCH HÀNG SỰ HÀI LÒNG TUYỆT ĐỐI !.<br>
                 </p>
             </div>
+            {{--<div id="h_introduce_bottom" class="col-md-12">--}}
+            {{--{{ Html::image('images/beauty/h_introduce_bar.png','',array('class'=>'h_introduce_bar_img'))}}--}}
+            {{--</div>--}}
             <div id="h_introduce_bottom" class="col-md-12">
-                {{ Html::image('images/beauty/h_introduce_bar.png','',array('class'=>'h_introduce_bar_img'))}}
+                <div class="row">
+                    <div class="col-md-6">
+                        <a href="#">
+                            {{ Html::image('images/beauty/h_introduce_1.jpg','',array('class'=>'h_introduce_bar_img'))}}
+                            <div class="h_home_info">
+                                <h4>Sản Phẩm Mới</h4>
+                                <span>Xem Chi Tiết</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="#">
+                            {{ Html::image('images/beauty/h_introduce_2.jpg','',array('class'=>'h_introduce_bar_img'))}}
+                            <div class="h_home_info">
+                                <h4>Giá VLXD Hôm Nay</h4>
+                                <span>Xem Chi Tiết</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
