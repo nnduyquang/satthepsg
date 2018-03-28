@@ -6,7 +6,7 @@ use App\CategoryItem;
 use App\Post;
 use Illuminate\Http\Request;
 
-class CategoryItemController extends Controller
+class CategoryPostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class CategoryItemController extends Controller
      */
     public function index(Request $request)
     {
-        $dd_categorie_posts = CategoryItem::orderBy('order')->get();
+        $dd_categorie_posts = CategoryItem::where('type', CATEGORY_POST)->orderBy('order')->get();
         foreach ($dd_categorie_posts as $key => $data) {
             if ($data->level == CATEGORY_POST_CAP_1) {
                 $data->name = ' ---- ' . $data->name;
@@ -37,8 +37,7 @@ class CategoryItemController extends Controller
      */
     public function create()
     {
-        $pages = Post::where('post_type', 1)->get();
-        $dd_categorie_posts = CategoryItem::orderBy('order')->get();
+        $dd_categorie_posts = CategoryItem::where('type', CATEGORY_POST)->orderBy('order')->get();
         foreach ($dd_categorie_posts as $key => $data) {
             if ($data->level == CATEGORY_POST_CAP_1) {
                 $data->name = ' ---- ' . $data->name;
@@ -51,7 +50,7 @@ class CategoryItemController extends Controller
         $newArray = [];
         self::showCategoryItemDropDown($dd_categorie_posts, 0, $newArray);
         $dd_categorie_posts = array_prepend(array_pluck($newArray, 'name', 'id'), 'Cấp Cha', '-1');
-        return view('backend.admin.categorypost.create', compact('roles','pages' ,'dd_categorie_posts'));
+        return view('backend.admin.categorypost.create', compact('roles','dd_categorie_posts'));
     }
 
     /**
@@ -66,8 +65,6 @@ class CategoryItemController extends Controller
         $name = $request->input('name');
         $order = $request->input('order');
         $parentID = $request->input('parent');
-        $pageId = $request->input('page_id');
-        $template=$request->input('template');
         if ($parentID != CATEGORY_POST_CAP_CHA) {
             $categorypost->parent_id = $parentID;
             $level = CategoryItem::where('id', '=', $parentID)->first()->level;
@@ -77,8 +74,6 @@ class CategoryItemController extends Controller
         if ($order) {
             $categorypost->order = $order;
         }
-        $categorypost->page_id = $pageId;
-        $categorypost->template = $template;
         $categorypost->name = $name;
         $categorypost->path = chuyen_chuoi_thanh_path($name);
         $categorypost->save();
@@ -141,8 +136,6 @@ class CategoryItemController extends Controller
             $categorypost->order = $order;
         }
         $parentID = $request->input('parent');
-        $template=$request->input('template');
-        $pageId = $request->input('page_id');
         if ($parentID != $categorypost->parent_id) {
             if ($parentID != CATEGORY_POST_CAP_CHA) {
                 $categorypost->parent_id = $parentID;
@@ -154,7 +147,6 @@ class CategoryItemController extends Controller
             }
         }
         $categorypost->page_id = $pageId;
-        $categorypost->template = $template;
         $categorypost->name = $name;
         $categorypost->path = chuyen_chuoi_thanh_path($name);
         $categorypost->save();
