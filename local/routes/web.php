@@ -1,16 +1,11 @@
 <?php
 
 
-Route::get('/', function () {
-    return view('frontend.home.index');
-});
-Route::get('/danh-muc/san-go-duc', function () {
-    return view('frontend.category.index');
-});
+Route::get('/','FrontendController@getAllListCategoryAndProduct');
+Route::get('/danh-muc/{pathParent}/{pathSub}','FrontendController@getProductByCategorySub');
+Route::get('/danh-muc/{path}','FrontendController@getProductByCategoryMain');
 
-Route::get('/san-pham/san-go-gia-re', function () {
-    return view('frontend.product.index');
-});
+Route::get('/san-pham/{path}','FrontendController@getProductInfo');
 Route::get('/tim-kiem', function () {
     return view('frontend.search.index');
 });
@@ -64,6 +59,8 @@ Route::group(['middleware' => ['auth']], function () {
 
     //CATEGORY PRODUCT
     Route::get('sml_admin/danh-muc-san-pham', ['as' => 'categoryproduct.index', 'uses' => 'CategoryProductController@index', 'middleware' => ['permission:page-list|page-create|page-edit|page-delete']]);
+    Route::post('sml_admin/danh-muc-san-pham/search', ['as' => 'categoryproduct.search', 'uses' => 'CategoryProductController@search']);
+    Route::post('sml_admin/danh-muc-san-pham/paste', ['as' => 'categoryproduct.paste', 'uses' => 'CategoryProductController@paste']);
     Route::post('sml_admin/danh-muc-san-pham/create', ['as' => 'categoryproduct.store', 'uses' => 'CategoryProductController@store', 'middleware' => ['permission:page-create']]);
 //    Route::post('sml_admin/danh-muc-bai-vie', ['as' => 'categorypost.search', 'uses' => 'TuyenDungController@search']);
     Route::get('sml_admin/danh-muc-san-pham/create', ['as' => 'categoryproduct.create', 'uses' => 'CategoryProductController@create', 'middleware' => ['permission:page-create']]);
@@ -74,8 +71,8 @@ Route::group(['middleware' => ['auth']], function () {
     //PRODUCT
     Route::get('sml_admin/san-pham', ['as' => 'product.index', 'uses' => 'ProductController@index', 'middleware' => ['permission:product-list|product-create|product-edit|product-delete']]);
     Route::post('sml_admin/san-pham/create', ['as' => 'product.store', 'uses' => 'ProductController@store', 'middleware' => ['permission:product-create']]);
-    Route::post('sml_admin/san-pham', ['as' => 'product.search', 'uses' => 'ProductController@search']);
-    Route::post('sml_admin/past', ['as' => 'product.paste', 'uses' => 'ProductController@paste']);
+    Route::post('sml_admin/san-pham/search', ['as' => 'product.search', 'uses' => 'ProductController@search']);
+    Route::post('sml_admin/san-pham/past', ['as' => 'product.paste', 'uses' => 'ProductController@paste']);
     Route::get('sml_admin/san-pham/create', ['as' => 'product.create', 'uses' => 'ProductController@create', 'middleware' => ['permission:product-create']]);
     Route::get('sml_admin/san-pham/{id}/edit', ['as' => 'product.edit', 'uses' => 'ProductController@edit', 'middleware' => ['permission:product-edit']]);
     Route::patch('sml_admin/san-pham/{id}', ['as' => 'product.update', 'uses' => 'ProductController@update', 'middleware' => ['permission:product-edit']]);

@@ -742,6 +742,11 @@ img {
   font-size: 36px;
 }
 
+#p_info .p-description {
+  margin-top: 20px;
+  line-height: 1.5;
+}
+
 #p_info #p-content {
   margin-bottom: 20px;
   margin-top: 20px;

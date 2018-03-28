@@ -38,12 +38,12 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <strong>Hình Đại Diện: </strong>
-                    {!! Form::text('image', url('/').'/'.$product->image, array('class' => 'form-control','id'=>'pathImageProduct')) !!}
+                    {!! Form::text('image', url('/').'/'.$product->image, array('class' => 'form-control','id'=>'pathImage')) !!}
                     <br>
-                    {!! Form::button('Tìm', array('id' => 'btnBrowseImageProduct','class'=>'btn btn-primary')) !!}
+                    {!! Form::button('Tìm', array('id' => 'btnBrowseImage','class'=>'btn btn-primary')) !!}
                 </div>
                 <div class="form-group">
-                    {{ Html::image($product->image,'',array('id'=>'showHinhProduct','class'=>'show-image'))}}
+                    {{ Html::image($product->image,'',array('id'=>'showHinh','class'=>'show-image'))}}
                 </div>
                 <div class="form-group">
                     <strong>Loại Sản Phẩm</strong>

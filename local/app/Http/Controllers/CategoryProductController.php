@@ -222,6 +222,23 @@ class CategoryProductController extends Controller
             }
         }
     }
+    public function search(Request $request)
+    {
+        $keywords = preg_replace('/\s+/', ' ', $request->input('txtSearch'));
+        $categoryposts = CategoryItem::where('name', 'like', '%' . $keywords . '%')->orderBy('id', 'DESC')->paginate(5);
+        return view('backend.admin.categoryproduct.index', compact('categoryposts', 'keywords'))->with('i', ($request->input('categoryposts', 1) - 1) * 5);
+    }
+    public function paste(Request $request)
+    {
+        $listId = $request->input('listID');
+        $categoryposts = CategoryItem::find(explode(',', $listId));
+        foreach ($categoryposts as $key => $data) {
+            $data->name = $data->name . ' ' . rand(pow(10, 2), pow(10, 3) - 1);
+            $data->path = chuyen_chuoi_thanh_path($data->name);
+        }
+        CategoryItem::insert($categoryposts->toArray());
+        return redirect()->route('categoryproduct.index')->with('success', 'Tạo Mới Thành Công Loại');
+    }
 
 
 }

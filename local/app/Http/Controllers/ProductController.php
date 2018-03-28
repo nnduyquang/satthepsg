@@ -239,6 +239,7 @@ class ProductController extends Controller
         $image = substr($image, strpos($image, 'images'), strlen($image) - 1);
         $product->name = $name;
         $product->path = chuyen_chuoi_thanh_path($name);
+        $product->image = $image;
         $product->content = $content;
         $product->category_product_id = $categoryPostID;
         $product->user_id = Auth::user()->id;

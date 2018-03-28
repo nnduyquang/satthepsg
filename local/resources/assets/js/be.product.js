@@ -25,11 +25,4 @@ $('.ulti-copy').click(function(){
     console.log(selected);
     // alert(id[0]);
 });
-$('.ulti-paste').click(function(){
-    if( !$('input[name=listID]').val()){
-        alert('Bạn chưa Sao Chép Hoặc Chưa chọn sản phẩm');
-    }
-    else{
-        $('#formPaste').submit();
-    }
-});
+

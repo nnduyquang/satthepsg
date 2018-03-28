@@ -21,9 +21,49 @@
             <p>{{ $message }}</p>
         </div>
     @endif
+    {!! Form::open(array('route' => 'categoryproduct.search','method'=>'POST','id'=>'formSearchCategory')) !!}
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-6">
+                {!! Form::text('txtSearch',null, array('class' => 'form-control','id'=>'txtSearch')) !!}
+            </div>
+            <div class="col-md-6">
+                {!! Form::submit('Tìm Kiếm', ['class' => 'btn btn-info']) !!}
+            </div>
+
+        </div>
+    </div>
+    {!! Form::close() !!}
+    @if(!empty($keywords))
+        <div id="showKeySearch" class="col-md-12">
+            <div class="wrap-search">
+                <i class="fa fa-caret-right" aria-hidden="true"></i>{{$keywords}} <a
+                        href="{{ route('categoryproduct.search') }}">X</a>
+            </div>
+        </div>
+        {{ Form::hidden('hdKeyword', $keywords) }}
+    @endif
+    <div id="ulti-bar" class="col-md-12">
+        <div class="row">
+            <div class="ulti-edit" class="col-md-2">
+                <ul class="ulti-head">
+                    <li><a href="">Chỉnh Sửa</a>
+                        <ul class="ulti-head-dropdown">
+                            <li><a class="ulti-copy" href="#">Sao Chép</a></li>
+                            {!! Form::open(array('route' => 'categoryproduct.paste','method'=>'POST','id'=>'formPaste')) !!}
+                            {{ Form::hidden('listID') }}
+                            <li><a class="ulti-paste" href="#">Dán</a></li>
+                            {!! Form::close() !!}
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <table class="table table-bordered">
         <tr>
             <th>TT</th>
+            <th></th>
             <th>ID</th>
             <th>Tên Chuyên Mục</th>
             <th>Ngày Đăng</th>
@@ -32,6 +72,7 @@
         </tr>
         @foreach ($categoryposts as $key => $data)
             <td>{{ ++$i }}</td>
+            <td>{{Form::checkbox('id[]',$data->id)}}</td>
             <td>{{ $data->id }}</td>
             <td>{{ $data->name }}</td>
             <td>{{ $data->created_at }}</td>

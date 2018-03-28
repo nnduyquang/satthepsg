@@ -47,6 +47,10 @@
                             </select>
                         </div>
                         <div class="form-group">
+                            <strong>Mô Tả Ngắn:</strong>
+                            {!! Form::textarea('description',null,array('placeholder' => '','id'=>'description-page','class' => 'form-control','rows'=>'10','style'=>'resize:none')) !!}
+                        </div>
+                        <div class="form-group">
                             <strong>Thứ Tự:</strong>
                             {!! Form::text('order',null, array('placeholder' => 'Thứ Tự','class' => 'form-control')) !!}
                         </div>
