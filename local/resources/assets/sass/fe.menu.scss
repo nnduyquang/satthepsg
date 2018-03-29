@@ -42,22 +42,23 @@
       }
     }
   }
-  #menu_logo_center{
-    img{
+  #menu_logo_center {
+    img {
       width: inherit;
     }
   }
   #menu_bottom {
-    background-color: green;
+    background-color: $main-color;
 
-    ul.main_menu{
+    ul.main_menu {
       display: block;
+      position: relative;
       //float: left;
       li {
         display: inline-block;
         padding: 15px;
-        position: relative;
-        i{
+
+        i {
           color: white;
           font-size: 16px;
           padding-right: 6px;
@@ -70,30 +71,62 @@
         }
       }
       li:hover {
-        background-color: rgba(115, 217, 220, 0.97);
+        background-color: $main-color-hover;
       }
       li.has-item-down {
         transition: all 0.2s;
-        ul {
+        .drop-down {
           position: absolute;
           opacity: 0;
           display: none;
-          background-color: rgba(115, 217, 220, 0.97);
+          background-color: $main-color-1;
           top: 100%;
           left: 0;
           z-index: 9;
           width: 160%;
-          li {
-            display: block;
-            padding-left: 10px;
-            transition: all 0.2s;
-          }
-          li:hover {
-            padding-left: 20px;
+          padding: 35px 0 18px;
+          ul {
+            li {
+              display: block;
+              padding: 5px;
+            }
+            li.title {
+              a {
+                text-transform: uppercase;
+              }
+            }
+            li.sub-item {
+              a {
+                padding-left: 10px;
+                text-transform: capitalize;
+              }
+            }
           }
         }
       }
-      li.has-item-down:hover > ul {
+      li.has-item-down:hover > .drop-down {
+        display: block;
+        opacity: 1;
+      }
+      li.has-item-down-price {
+        position: relative;
+        ul {
+          background-color: $main-color-1;
+          position: absolute;
+          list-style: none;
+          opacity: 0;
+          width: 260px;
+          display: none;
+          padding: 10px;
+          z-index: 6;
+          top: 100%;
+          left: 0;
+          li {
+            display: block;
+          }
+        }
+      }
+      li.has-item-down-price:hover > ul {
         display: block;
         opacity: 1;
       }

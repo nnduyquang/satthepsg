@@ -8,7 +8,7 @@ interface FrontendRepositoryInterface
 
     public function getProductByCategoryMain($path);
 
-    public function getProductByCategorySub($pathParent,$pathSub);
+    public function getProductByCategorySub($pathParent, $pathSub);
 
     public function getServiceByCategory($path);
 
@@ -18,9 +18,15 @@ interface FrontendRepositoryInterface
 
     public function getServiceInfo($categoryPath, $servicePath);
 
-    public function getFooterInfo();
+    public function getFrontEndInfo();
 
     public function getMainPage($path);
 
     public function getSearch($keySearch);
+
+    public function getPageContent($path);
+
+    public function getCategoryPostContent($path);
+
+    public function getPostDetail($pathParent, $pathSub);
 }

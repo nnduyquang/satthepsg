@@ -11,7 +11,7 @@ class MenuRepository extends EloquentRepository implements MenuRepositoryInterfa
 {
     public function getAllMenuTree()
     {
-        $menus = Menu::orderBy('order')->get(['id', 'name','order', 'type', 'isActive', 'content_id', 'parent_id', 'level']);
+        $menus = Menu::orderBy('order')->get(['id', 'name', 'order', 'type', 'isActive', 'content_id', 'parent_id', 'level']);
         $children = array();
         foreach ($menus as $key => $data) {
             $data['children'] = $children;
@@ -23,9 +23,9 @@ class MenuRepository extends EloquentRepository implements MenuRepositoryInterfa
                 } else {
                     $data['url'] = '#';
                 }
-            }else if($data->type == 2){
-                $categoryPost=CategoryItem::where('id', $data->content_id)->first();
-                $data['url'] = 'danh-muc/'.$categoryPost->path;
+            } else if ($data->type == 2) {
+                $categoryPost = CategoryItem::where('id', $data->content_id)->first();
+                $data['url'] = 'danh-muc/' . $categoryPost->path;
             }
             unset($data->name);
         }
@@ -33,8 +33,7 @@ class MenuRepository extends EloquentRepository implements MenuRepositoryInterfa
         self::findChildMenu($menus, 0, $newArray);
         $newArray = array_reverse($newArray);
         foreach ($newArray as $key => $data) {
-            if ($data->level == 0)
-                continue;
+            if ($data->level == 0) continue;
             foreach ($newArray as $key2 => $data2) {
                 if ($data2->id == $data->parent_id) {
                     $temp = array($data);
@@ -47,6 +46,7 @@ class MenuRepository extends EloquentRepository implements MenuRepositoryInterfa
         $newArray = array_reverse($newArray);
         return $newArray;
     }
+
 
     public function getModel()
     {
@@ -199,6 +199,27 @@ class MenuRepository extends EloquentRepository implements MenuRepositoryInterfa
         foreach ($listMenu as $key => $data) {
 
         }
+    }
+
+    public function getFrontendMenu()
+    {
+        $data = [];
+        $categoryMain = CategoryItem::where('level', MENU_GOC)->where('type', CATEGORY_PRODUCT)->get();
+
+        foreach ($categoryMain as $key => $item) {
+            $categorySub = CategoryItem::where('parent_id', $item->id)->get();
+            $item->categorySub = $categorySub;
+
+        }
+        $postMain = CategoryItem::where('level', MENU_GOC)->where('type', CATEGORY_POST)->where('path', 'bao-gia-sat-thep')->first();
+
+        $postSub = Post::where('post_type', $postMain->id)->get();
+        $postMain->postSub = $postSub;
+
+
+        $data['categoryMain'] = $categoryMain;
+        $data['postMain'] = $postMain;
+        return $data;
     }
 
 

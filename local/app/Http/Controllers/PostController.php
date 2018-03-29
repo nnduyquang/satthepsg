@@ -16,7 +16,7 @@ class PostController extends Controller
      */
     public function index(Request $request)
     {
-        $posts = Post::whereNotIn('post_type', [1, 3])->orderBy('id', 'DESC')->get();
+        $posts = Post::orderBy('id', 'DESC')->get();
         return view('backend.admin.post.index', compact('posts'))->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
@@ -27,7 +27,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        $dd_categorie_posts = CategoryItem::whereNotIn('id', [1, 3])->orderBy('order')->get();
+        $dd_categorie_posts = CategoryItem::where('type',CATEGORY_POST)->orderBy('order')->get();
         foreach ($dd_categorie_posts as $key => $data) {
             if ($data->level == CATEGORY_POST_CAP_1) {
                 $data->name = ' ---- ' . $data->name;
@@ -112,7 +112,7 @@ class PostController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
-        $dd_categorie_posts = CategoryItem::orderBy('order')->get();
+        $dd_categorie_posts = CategoryItem::where('type',CATEGORY_POST)->orderBy('order')->get();
         foreach ($dd_categorie_posts as $key => $data) {
             if ($data->level == CATEGORY_POST_CAP_1) {
                 $data->name = ' ---- ' . $data->name;

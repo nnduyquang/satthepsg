@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2018 at 11:12 AM
+-- Generation Time: Mar 29, 2018 at 11:26 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 7.0.27
 
@@ -91,7 +91,8 @@ INSERT INTO `category_items` (`id`, `name`, `path`, `description`, `image`, `lev
 (40, 'Xà Gồ Xây Dựng', 'xa-go-xay-dung', '<p>\r\n	Xà Gồ Xây Dựng\r\n</p>', 'images/uploads/images/chuyenmuc/category-ca-info-intro.jpg', 0, NULL, 1, 'Xà Gồ Xây Dựng', 'Xà Gồ Xây Dựng', 'Xà Gồ Xây Dựng', 7, 1, '2018-03-28 03:00:25', '2018-03-28 03:00:25'),
 (41, 'Xà Gồ C', 'xa-go-c', '<p>\r\n	Xà Gồ C\r\n</p>', 'images/uploads/images/chuyenmuc/category-ca-info-intro.jpg', 1, 40, 1, 'Xà Gồ C', 'Xà Gồ C', 'Xà Gồ C', 1, 1, '2018-03-28 03:00:56', '2018-03-28 03:00:56'),
 (42, 'Xà Gồ Z', 'xa-go-z', '<p>\r\n	Xà Gồ Z\r\n</p>', 'images/uploads/images/chuyenmuc/category-ca-info-intro.jpg', 1, 40, 1, 'Xà Gồ Z', 'Xà Gồ Z', 'Xà Gồ Z', 2, 1, '2018-03-28 03:00:56', '2018-03-28 03:01:32'),
-(43, 'Xà Gồ Thép Hộp', 'xa-go-thep-hop', '<p>\r\n	Xà Gồ Thép Hộp\r\n</p>', 'images/uploads/images/chuyenmuc/category-ca-info-intro.jpg', 1, 40, 1, 'Xà Gồ Thép Hộp', 'Xà Gồ Thép Hộp', 'Xà Gồ Thép Hộp', 3, 1, '2018-03-28 03:00:56', '2018-03-28 03:01:50');
+(43, 'Xà Gồ Thép Hộp', 'xa-go-thep-hop', '<p>\r\n	Xà Gồ Thép Hộp\r\n</p>', 'images/uploads/images/chuyenmuc/category-ca-info-intro.jpg', 1, 40, 1, 'Xà Gồ Thép Hộp', 'Xà Gồ Thép Hộp', 'Xà Gồ Thép Hộp', 3, 1, '2018-03-28 03:00:56', '2018-03-28 03:01:50'),
+(44, 'Báo Giá Sắt Thép', 'bao-gia-sat-thep', '<p>\r\n	Báo Giá Sắt Thép\r\n</p>', 'images/uploads/images/chuyenmuc/category-ca-info-intro.jpg', 0, NULL, 0, 'Báo Giá Sắt Thép', 'Báo Giá Sắt Thép', 'Báo Giá Sắt Thép', 1, 1, '2018-03-29 02:21:25', '2018-03-29 02:34:52');
 
 -- --------------------------------------------------------
 
@@ -121,6 +122,30 @@ INSERT INTO `category_permissions` (`id`, `name`, `created_at`, `updated_at`) VA
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `configs`
+--
+
+CREATE TABLE `configs` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `content` longtext COLLATE utf8mb4_unicode_ci,
+  `description` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `order` int(11) DEFAULT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `configs`
+--
+
+INSERT INTO `configs` (`id`, `name`, `content`, `description`, `order`, `user_id`, `created_at`, `updated_at`) VALUES
+(1, 'config-contact', '<p>\r\n	<strong><em><span style="background-color:#f1c40f;">Hotline đặt hàng</span>:</em></strong><em>&nbsp;&nbsp;<strong>0903.866.869 &ndash; 0968.69.66.69</strong></em>\r\n</p>\r\n\r\n<p>\r\n	<strong><em>Hotline hỗ trợ tư vấn và phản hồi ý kiến</em></strong><em>:&nbsp;<strong>0906.960.060</strong></em>\r\n</p>\r\n\r\n<p>\r\n	<strong><em>Zalo, Viber:</em></strong>&nbsp;<em>0906.960.060</em>\r\n</p>\r\n\r\n<p>\r\n	<strong><em>Facebook:</em></strong><em>&nbsp;https://www.facebook.com/linkhome.vn</em>\r\n</p>\r\n\r\n<p>\r\n	&nbsp;\r\n</p>\r\n\r\n<p>\r\n	<strong><em>Hân hạnh được phục vụ quý khách hàng.!</em></strong>\r\n</p>\r\n\r\n<p>\r\n	<strong><em>Thông tin liên hệ với chúng tôi:</em></strong>\r\n</p>\r\n\r\n<p>\r\n	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<strong>CÔNG TY TNHH TRANG TRÍ NỘI THẤT LINK HOME</strong>\r\n</p>\r\n\r\n<p>\r\n	&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<em>Ngôi nhà ước mơ</em>\r\n</p>\r\n\r\n<p>\r\n	<strong>TRỤ SỞ CHÍNH:</strong>&nbsp;<em>113 Đường Bình Long, P.Bình Hưng Hòa A, Q.Bình Tân, TP.HCM</em>\r\n</p>\r\n\r\n<p>\r\n	<strong>Điện thoại:&nbsp;</strong><em>(028).66 88 98 98 &ndash; 66 88 87 87</em>\r\n</p>\r\n\r\n<p>\r\n	<strong>Di động:</strong><em>&nbsp;0901.31.32.33 &ndash; 0931 33 36 39&nbsp;(Mr Tuấn)</em>\r\n</p>\r\n\r\n<p>\r\n	<strong>KHO HÀNG:</strong>&nbsp;<i>153 Đường Đỗ Bí, P.Phú Thạnh, Q.Tân Phú, TP.HCM</i>\r\n</p>\r\n\r\n<p>\r\n	<strong>Điện thoại:&nbsp;</strong><em>08 68 49 69 69 - 0906 960 060</em>\r\n</p>', NULL, NULL, 1, NULL, '2018-03-29 07:27:48');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `menus`
 --
 
@@ -137,6 +162,13 @@ CREATE TABLE `menus` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `menus`
+--
+
+INSERT INTO `menus` (`id`, `name`, `path`, `level`, `order`, `parent_id`, `content_id`, `type`, `isActive`, `created_at`, `updated_at`) VALUES
+(1, 'Giới Thiệu', 'gioi-thieu', 0, 1, NULL, 3, 1, 1, '2018-03-29 02:47:32', '2018-03-29 02:47:32');
 
 -- --------------------------------------------------------
 
@@ -280,6 +312,16 @@ CREATE TABLE `posts` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `posts`
+--
+
+INSERT INTO `posts` (`id`, `title`, `path`, `description`, `content`, `image`, `seo_title`, `seo_description`, `seo_keywords`, `post_type`, `isActive`, `user_id`, `created_at`, `updated_at`) VALUES
+(1, 'Báo Giá Sắt Thép Pomina', 'bao-gia-sat-thep-pomina', '<p>\r\n	Báo Giá Sắt Thép Pomina\r\n</p>', '<p>\r\n	<strong>Giá thép pomina</strong>&nbsp;mới nhất năm 2017 đang có xu hướng giảm mạnh trong mấy tháng tiếp theo.Đầu tháng 2 năm 2017 thép pomina tiếp tục giảm xuống 340/kg theo đó&nbsp;<strong>giá sắt thép pomina</strong>hôm nay giao động 12.500/kg giảm hơn năm ngoái 500/kg ở thời điểm này. Sài Gòn CMC chuyên phân phối sỷ $ lẻ thép pomina chính hãng tại hồ chí minh và các tỉnh lân cận.\r\n</p>\r\n\r\n<p>\r\n	Đê thuận tiện giao hàng nhanh đến công trình hiện tại sài gòn cmc&nbsp;đã có 19 kho hàng khắp khu vực miền nam,&nbsp;trong đó bình dương, đồng nai , long an , hồ chí minh chiếm 13 kho cung cấp chính thép xây dựng pomina hiện nay. Sau đây chúng tôi xin gửi&nbsp;&nbsp;<strong><em>báo giá sắt thép pomina</em></strong>&nbsp;trong ngày được cập nhật chính xác nhất - uy tín nhất .\r\n</p>\r\n\r\n<h1>\r\n	Bảng Giá Thép Pomina - Báo Giá Sắt Thé Xây Dựng Pomiona\r\n</h1>\r\n\r\n<p>\r\n	<strong><strong>LIÊN HỆ : 0</strong></strong>\r\n</p>\r\n\r\n<p>\r\n	<strong>&nbsp;( Đặc biệt : Có hoa hồng cho người giới thiệu )</strong>\r\n</p>\r\n\r\n<p style="text-align: center;">\r\n	<img alt="Bảng báo giá tép Pomina mới nhất hiện nay" src="http://media.bizwebmedia.net/sites/97379/data/Upload/2015/1/gia_thep_pomina.jpg">\r\n</p>\r\n\r\n<h2>\r\n	Bảng báo giá tép Pomina mới nhất hiện nay\r\n</h2>\r\n\r\n<p>\r\n	<em>Bảng báo SẮT THÉP POMINA&nbsp;trên&nbsp;chỉ mang tính chất kham khảo và luôn có sự thay đổi theo thị trường nên quý khách vui lòng gọi trực tiếp đến tổng đài hoặc đường giây nóng cho chúng tôi để cập nhật đúng thông tin giá cả chính xác nhất.</em>\r\n</p>\r\n\r\n<p>\r\n	&nbsp;\r\n</p>\r\n\r\n<p>\r\n	<strong><em>Vật Liệu Thép Khánh Nam&nbsp;Dám Cam Kết với khách hàng về chất lượng và uy tín tại &nbsp;hồ chí minh! Quẳng Gánh Lo Âu: Làm trọn công việc như đó là danh dự của chúng tôi.</em></strong>\r\n</p>\r\n\r\n<p>\r\n	-&nbsp;<strong>Phương thức thanh toán</strong>&nbsp; &nbsp; &nbsp;|&nbsp;Thanh toán tiền mặt hoặc chuyển khoản qua ngân hàng việt nam<br>\r\n	-&nbsp;<strong>Phương thức giao nhận</strong>&nbsp; &nbsp; &nbsp; &nbsp;|&nbsp;Thép cuộn giao theo phiếu cân, thép cây giao hàng theo parem nhà máy.&nbsp;<br>\r\n	-&nbsp;<strong>Thời gian giao hàng</strong>&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Theo thỏa thuận.<br>\r\n	-&nbsp;<strong>Địa điểm giao hàng &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</strong>|&nbsp;Sắt&nbsp;Thép pomina&nbsp;giao tại Hồ chí minh và các tỉnh lân cận&nbsp;<br>\r\n	-&nbsp;<strong>Hiệu lực báo giá</strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;| Có giá trị thời điểm, có thể thay đổi theo giá của nhà máy\r\n</p>\r\n\r\n<p style="text-align: center;">\r\n	<img alt="Giá sắt thép pomina cập nhật trong ngày - ảnh sản phẩm" src="http://media.bizwebmedia.net/sites/97379/data/Upload/2015/1/gia_sat_thep_pomina.jpg" style="height: 50%; width: 50%;">\r\n</p>\r\n\r\n<p>\r\n	<em><strong>Giá sắt thép pomina cập nhật trong ngày - ảnh sản phẩm</strong></em>\r\n</p>\r\n\r\n<p>\r\n	<strong><em>Hotline:&nbsp;</em></strong>\r\n</p>', 'images/uploads/images/chuyenmuc/category-ca-info-intro.jpg', 'Báo Giá Sắt Thép Pomina', '<p>\r\n	Báo Giá Sắt Thép Pomina\r\n</p>', 'Báo Giá Sắt Thép Pomina', 44, 1, 1, '2018-03-29 02:37:48', '2018-03-29 02:37:48'),
+(2, 'Báo Giá Sắt Thép Việt Nhật', 'bao-gia-sat-thep-viet-nhat', '<p>\r\n	Báo Giá Sắt Thép Việt Nhật\r\n</p>', '<p>\r\n	<strong>Giá thép việt nhật</strong>&nbsp;hôm nay tại nhà máy Thép Vina Kyoei &nbsp;ở&nbsp;Phú Mỹ, Vũng Tàu được niêm yết theo chiều hướng giảm nhẹ . Hiện Tại theo brem nhà máy&nbsp;<em><strong>giá sắt thép việt nhật</strong></em><a href="http://giatonthep.com/thep-viet-nhat-b1592374.html" title="thép việt nhật" type="thép việt nhật">&nbsp;</a>giao động từ 12,900/kg . Được biết giá còn giảm xuống ở mấy tháng tiếp theo năm 2017.\r\n</p>\r\n\r\n<p>\r\n	Sài Gòn cmc là một trong những nhà phân phối lớn nhất tại khu vực miền nam cung ứng sản phẩm&nbsp;sắt thép xây dựng&nbsp;- thép việt nhật chĩnh hãng .&nbsp;Với phương châm&nbsp;&#39;giao hàng lẻ bằng giá sỉ&nbsp;&#39;cùng mạng lưới cung cấp rộng khắp trong khu vực thành phố và các tỉnh lân cận.\r\n</p>\r\n\r\n<p>\r\n	Hiện nay hàng ngàn cửa hàng, đại lý, công trình xây dựng,chủ đầu tư, nhà thầu..đã xem Thép Khánh Nam là một địa chỉ mua hàng quen thuộc và tin cậy, một nhà cung ứng thép xây dựng việt nhật&nbsp;&nbsp;uy tín chất lượng hàng đầu. Để quý khách hàng nắm vững về sản phẩm cũng như giá sắt&nbsp;thép việt nhật&nbsp;nhanh nhất - chính xác nhất.\r\n</p>\r\n\r\n<h1>\r\n	Bảng Giá Thép Việt Nhật - Báo Giá Sắt Thép Xây Dựng Việt Nhật\r\n</h1>\r\n\r\n<p>\r\n	<strong><strong>LIÊN HỆ :&nbsp;</strong></strong>\r\n</p>\r\n\r\n<p>\r\n	<strong>&nbsp;( Đặc biệt : Có hoa hồng cho người giới thiệu )</strong>\r\n</p>\r\n\r\n<h2>\r\n	&nbsp; &nbsp; &nbsp;&nbsp;<strong>&nbsp;<u>Đơn&nbsp;vị chúng tôi xin gửi&nbsp;đến Quý khách&nbsp;bảng giá thép việt nhật dưới đây</u></strong>\r\n</h2>\r\n\r\n<p style="text-align: center;">\r\n	<img alt="Giá sắt thép việt nhật cập nhật liên tục từ nhà máy phát hành" src="http://media.bizwebmedia.net/sites/97379/data/Upload/2015/1/gia_thep_viet_nhat_13.jpg" style="height: 80%; width: 80%;">\r\n</p>\r\n\r\n<h4>\r\n	<em>Giá sắt thép việt nhật cập nhật liên tục từ nhà máy phát hành</em>\r\n</h4>\r\n\r\n<p>\r\n	<strong>Bảng giá thép việt nhật</strong><em>&nbsp;trên&nbsp;chỉ mang tính chất kham khảo và luôn có sự thay đổi theo thị trường nên quý khách vui lòng gọi trực tiếp đến tổng đài hoặc đường giây nóng cho chúng tôi để cập nhật đúng thông tin giá cả chính xác nhất.</em>\r\n</p>\r\n\r\n<p>\r\n	&nbsp;\r\n</p>\r\n\r\n<p>\r\n	-&nbsp;<strong>Phương thức thanh toán</strong>&nbsp; &nbsp; &nbsp;|&nbsp;Thanh toán tiền mặt hoặc chuyển khoản qua ngân hàng việt nam<br>\r\n	-&nbsp;<strong>Phương thức giao nhận</strong>&nbsp; &nbsp; &nbsp; &nbsp;|&nbsp;Thép cuộn giao theo phiếu cân, thép cây giao hàng theo parem nhà máy.&nbsp;<br>\r\n	-&nbsp;<strong>Thời gian giao hàng</strong>&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| Theo thỏa thuận.<br>\r\n	-&nbsp;<strong>Địa điểm giao hàng &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</strong>| Thép Vina Kyoei&nbsp;giao tại Hồ chí minh và các tỉnh lân cận&nbsp;<br>\r\n	-&nbsp;<strong>Hiệu lực báo giá</strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;| Có giá trị thời điểm, có thể thay đổi theo giá của nhà máy\r\n</p>\r\n\r\n<p>\r\n	<strong><em>Vật Liệu Thép Khánh Nam&nbsp;Dám Cam Kết với khách hàng về chất lượng và uy tín tại &nbsp;hồ chí minh! Quẳng Gánh Lo Âu: Làm trọn công việc như đó là danh dự của chúng tôi.</em></strong>\r\n</p>\r\n\r\n<h2>\r\n	DẤU HIỆU NHẬN BIẾT THÉP VIỆT NHẬT CHÍNH HÃNG\r\n</h2>\r\n\r\n<h4>\r\n	<strong>Để nhận biết&nbsp; đúng là thép gân việt nhật&nbsp;&nbsp;của Vina Kyoei xin chú ý các điểm sau:</strong>\r\n</h4>\r\n\r\n<p>\r\n	Trên thanh thép phải có: hình dấu thập nổi (hay còn gọi là &quot;Hoa Mai&quot;), chỉ số đường kính ở mặt đối diện giữa 2 &quot;Hoa Mai&quot;). Đặc biệt lưu ý: khoảng cách giữ hai &quot;Hoa Mai&quot; hay &quot;chỉ số đường kính&quot; liên tiếp nhau phải từ 1,0m đến 1,2m tuỳ đường kính trục cán như hình minh hoạ. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;\r\n</p>\r\n\r\n<p>\r\n	<br>\r\n	<img alt="Dấu hiệu nhận biết sắt thép việt nhật chính hãng" src="http://media.bizwebmedia.net/sites/81311/data/Upload/2014/11/bao_gia_thep_viet_nhat.png">\r\n</p>\r\n\r\n<h4>\r\n	<em><strong>Dấu hiệu nhận biết sắt thép việt nhật chính hãng</strong></em>\r\n</h4>\r\n\r\n<p>\r\n	<strong><em>Hotline:</em></strong>\r\n</p>', 'images/uploads/images/chuyenmuc/category-ca-info-intro.jpg', 'Báo Giá Sắt Thép Việt Nhật', '<p>\r\n	Báo Giá Sắt Thép Việt Nhật\r\n</p>', 'Báo Giá Sắt Thép Việt Nhật', 44, 1, 1, '2018-03-29 02:42:40', '2018-03-29 02:42:40'),
+(3, 'Giới Thiệu', 'gioi-thieu', '<p>\r\n	Giới Thiệu\r\n</p>', '<p>\r\n	<img alt="" src="http://media.bizwebmedia.net/Sites/97379/data/banners/logo(1).png?0"><strong>Sài Gòn CMC kính chào quý khách, chúc quý khách sức khỏe, thịnh vượng và thành công !</strong>\r\n</p>\r\n\r\n<p>\r\n	Saigoncmc.vn là website trực thuộc Công ty CP Sản xuất TM VLXD Sài Gòn.Sau nhiều năm phát triển,&nbsp;<a href="http://vatlieuxaydungcmc.com/vat-lieu-xay-dung"><strong>Công ty vật liệu xây dựng</strong></a>CMC&nbsp;đã &nbsp;vươn lên &nbsp;đứng đầu thị trường Miền Nam trong lĩnh vực phân phối vật liệu xây dựng.\r\n</p>\r\n\r\n<p>\r\n	Chúng tôi có hệ thống kho hàng khắp trên tất cả các quận tại Hồ Chí Minh và các tỉnh lân cận, cùng với đó đội ngũ chuyên nghiệp bao gồm: Nhân viên tư vấn chuyên nghiệp nhiệt tình, nhà xưởng,kho hàng và xe tải lớn nhỏ để vận chuyển tới tận công trình cho khách hàng.\r\n</p>\r\n\r\n<p>\r\n	Sản phẩm SaigonCMC cung cấp bao gồm các vật liệu như : Gạch,cát , đá ,xi măng, thép xây dựng,<a href="http://saigoncmc.vn/thep-hop-xay-dung-b1536425.html" title="thép hộp" type="thép hộp">thép hộp</a>,&hellip;.Đảm bảo khi quý khách hàng tìm đến với chúng tôi quý khách hàng sẽ có thể gặp một nhà cung cấp &nbsp;có thể cung cấp đầy đủ các vật liệu &nbsp;giúp quý khách hàng đang cần để phục vụ cho công trình mà không cần tìm tới các nhà cung cấp nhỏ lẻ khác.\r\n</p>\r\n\r\n<p>\r\n	<a href="http://vatlieuxaydungcmc.com/vat-lieu-xay-dung"><strong>Công ty vật liệu xây dựng</strong></a>&nbsp;CMC chúng tôi là nhà phân phối hàng đầu các chủng loại thép sản xuất trong nước và thép nhập khẩu của các thương hiệu lớn và có uy tín như: Thép Pomina, &nbsp;Thép Việt Nhật, Thép Việt &ndash; Úc, Thép Úc, Thép Miền Nam, Thép Hòa Phát, Thép Dana &ndash; Ý, Thép Việt Ý, Thép Việt Đức&hellip; &nbsp;Bên cạnh đó, Công ty còn là đại lý cung cấp thép hình các loại: thép I, thép U, thép V, thép tấm, thép ống&hellip; Ngoài ra Công ty còn là nhà phân phối chính thức của các loại tôn lợp mái của các thương hiệu như: Tôn Phương Nam, tôn Hoa Sen, tôn Việt Pháp, tôn Đông Á, tôn Trung Nguyên, tôn NakI và vật liệu xây dựng các loại.\r\n</p>\r\n\r\n<p>\r\n	Quý khách hàng đến với SaiGonCMC có thể yên tâm về giá sản phẩm luôn là báo giá mới &nbsp;nhất cập nhật từ các nhà máy sản xuât,với tiêu chí chất lượng, khối lượng đủ, và uy tín cùng phát triển.\r\n</p>\r\n\r\n<p>\r\n	Sài Gòn CMC chân thành cảm ơn quý khách hàng, bạn hàng, công ty xây dựng,... đã đồng hành và &nbsp;phát triển trong thời gian qua.Chúng tôi cam kết sẽ hỗ trợ đồng hành để cùng phát triển.\r\n</p>\r\n\r\n<h3>\r\n	Thông tin liên hệ SaigonCMC :\r\n</h3>\r\n\r\n<table border="0" cellpadding="5" cellspacing="20" id="thông tin liên hệ saigoncmc">\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n				<strong>VĂN PHÒNG GIAO DỊCH :</strong><br>\r\n				40A Cống Lở - P.15- Q.Tân Bình - Tp.HCM<br>\r\n				Tel: 0909 789 888 - 08 6675 0968<br>\r\n				Fax: 08 3526 9999 - 08 6273 9888<br>\r\n				Email: ceo@saigoncmc.vn<br>\r\n				Webiste :&nbsp;<a href="http://www.saigoncmc.vn/" id="vật liệu xây dựng" title="vật liệu xây dựng" type="vật liệu xây dựng">www.saigoncmc.vn</a>\r\n			</td>\r\n			<td>\r\n				<strong>TRỤ SỞ CHÍNH :</strong><br>\r\n				CÔNG TY &nbsp;CỔ PHẦN SX -TM VLXD SÀI GÒN<br>\r\n				lầu 2 - 99/3 Nguyễn Hữu Dật - P. Tây Thạnh - Q. Tân Phú<br>\r\n				Tel: - 0909 789 888 - &nbsp;08 6273 9888<br>\r\n				Fax: 08 3526 9999 &nbsp;- 0977 240 310&nbsp;<br>\r\n				Email: vatlieusaigoncmc@gmail.com\r\n			</td>\r\n			<td>\r\n				<strong>KHO HÀNG :</strong>&nbsp;<br>\r\n				kho 1 : 18 Lam Sơn - P.2 - Quận Tân Bình - Q.Tân Bình<br>\r\n				kho 2 : 97 Nguyễn Hữu Dật - P.Tây Thạnh - Q. Tân Phú<br>\r\n				kho 3 : CN 9 &nbsp;- KCN Tân Bình - Q. Tân Bình - HCM<br>\r\n				Tel : 09 7553 7554 &nbsp;- &nbsp;08 6675 0968<br>\r\n				Email: khohang@saigoncmc.vn&nbsp;\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', 'images/uploads/images/chuyenmuc/category-ca-info-intro.jpg', 'Giới Thiệu', 'Giới Thiệu', 'Giới Thiệu', 1, 1, 1, '2018-03-29 02:45:49', '2018-03-29 03:04:25'),
+(4, 'Liên Hệ', 'lien-he', '<p>\r\n	Liên Hệ\r\n</p>', '<p>\r\n	Liên Hệ\r\n</p>', 'images/uploads/images/chuyenmuc/category-ca-info-intro.jpg', 'Liên Hệ', 'Liên Hệ', 'Liên Hệ', 1, 1, 1, '2018-03-29 02:46:50', '2018-03-29 02:46:50');
 
 -- --------------------------------------------------------
 
@@ -504,6 +546,13 @@ ALTER TABLE `category_permissions`
   ADD UNIQUE KEY `category_permissions_name_unique` (`name`);
 
 --
+-- Indexes for table `configs`
+--
+ALTER TABLE `configs`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `configs_user_id_foreign` (`user_id`);
+
+--
 -- Indexes for table `menus`
 --
 ALTER TABLE `menus`
@@ -580,17 +629,22 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `category_items`
 --
 ALTER TABLE `category_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 --
 -- AUTO_INCREMENT for table `category_permissions`
 --
 ALTER TABLE `category_permissions`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
+-- AUTO_INCREMENT for table `configs`
+--
+ALTER TABLE `configs`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `menus`
 --
 ALTER TABLE `menus`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `migrations`
 --
@@ -605,7 +659,7 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `products`
 --
@@ -624,6 +678,12 @@ ALTER TABLE `users`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `configs`
+--
+ALTER TABLE `configs`
+  ADD CONSTRAINT `configs_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `permissions`

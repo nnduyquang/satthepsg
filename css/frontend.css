@@ -3,7 +3,7 @@
   src: url("../fonts/utm-avo.ttf");
 }
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -110,17 +110,17 @@ img {
 }
 
 #menu #menu_bottom {
-  background-color: green;
+  background-color: #004792;
 }
 
 #menu #menu_bottom ul.main_menu {
   display: block;
+  position: relative;
 }
 
 #menu #menu_bottom ul.main_menu li {
   display: inline-block;
   padding: 15px;
-  position: relative;
 }
 
 #menu #menu_bottom ul.main_menu li i {
@@ -137,7 +137,7 @@ img {
 }
 
 #menu #menu_bottom ul.main_menu li:hover {
-  background-color: rgba(115, 217, 220, 0.97);
+  background-color: #bcd0e6;
 }
 
 #menu #menu_bottom ul.main_menu li.has-item-down {
@@ -145,29 +145,59 @@ img {
   transition: all 0.2s;
 }
 
-#menu #menu_bottom ul.main_menu li.has-item-down ul {
+#menu #menu_bottom ul.main_menu li.has-item-down .drop-down {
   position: absolute;
   opacity: 0;
   display: none;
-  background-color: rgba(115, 217, 220, 0.97);
+  background-color: #427cb8;
   top: 100%;
   left: 0;
   z-index: 9;
   width: 160%;
+  padding: 35px 0 18px;
 }
 
-#menu #menu_bottom ul.main_menu li.has-item-down ul li {
+#menu #menu_bottom ul.main_menu li.has-item-down .drop-down ul li {
   display: block;
+  padding: 5px;
+}
+
+#menu #menu_bottom ul.main_menu li.has-item-down .drop-down ul li.title a {
+  text-transform: uppercase;
+}
+
+#menu #menu_bottom ul.main_menu li.has-item-down .drop-down ul li.sub-item a {
   padding-left: 10px;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
+  text-transform: capitalize;
 }
 
-#menu #menu_bottom ul.main_menu li.has-item-down ul li:hover {
-  padding-left: 20px;
+#menu #menu_bottom ul.main_menu li.has-item-down:hover > .drop-down {
+  display: block;
+  opacity: 1;
 }
 
-#menu #menu_bottom ul.main_menu li.has-item-down:hover > ul {
+#menu #menu_bottom ul.main_menu li.has-item-down-price {
+  position: relative;
+}
+
+#menu #menu_bottom ul.main_menu li.has-item-down-price ul {
+  background-color: #427cb8;
+  position: absolute;
+  list-style: none;
+  opacity: 0;
+  width: 260px;
+  display: none;
+  padding: 10px;
+  z-index: 6;
+  top: 100%;
+  left: 0;
+}
+
+#menu #menu_bottom ul.main_menu li.has-item-down-price ul li {
+  display: block;
+}
+
+#menu #menu_bottom ul.main_menu li.has-item-down-price:hover > ul {
   display: block;
   opacity: 1;
 }
@@ -758,6 +788,10 @@ img {
   text-align: justify;
 }
 
+#p_info #p-content .contact-info {
+  margin-top: 20px;
+}
+
 #p_info #p-other {
   border-top: 2px solid #004792;
   -webkit-box-shadow: 0px 3px 13px 0px rgba(136, 136, 136, 0.25);
@@ -853,6 +887,66 @@ img {
 #p_info #p-other .list-product .one-product:hover img.p_product_other_img {
   -webkit-transform: scale(1.2, 1.2);
           transform: scale(1.2, 1.2);
+}
+
+#pa_info .pa_info_detail h1.title {
+  font-size: 30px;
+  color: #004792;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-bottom: 2px solid #004792;
+  padding-bottom: 10px;
+}
+
+#pa_info .pa_info_detail .description {
+  line-height: 1.5;
+}
+
+#po_info .po_info_content h1.title {
+  font-size: 30px;
+  color: #004792;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-bottom: 2px solid #004792;
+  padding-bottom: 10px;
+}
+
+#po_info .po_info_content .description {
+  line-height: 1.5;
+}
+
+#po_info .po_info_detail .one-po-item {
+  margin-top: 40px;
+  position: relative;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+#po_info .po_info_detail .one-po-item img.po_item_img {
+  height: 157px;
+}
+
+#po_info .po_info_detail .one-po-item h4.title-product {
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  margin: 15px auto 0;
+  letter-spacing: .1px;
+  width: 100%;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.38;
+  text-transform: uppercase;
+}
+
+#po_info .po_info_detail .one-po-item h4.title-product a {
+  color: #004792;
 }
 
 #se_info .se_info_result h1.title {

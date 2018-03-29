@@ -30,11 +30,16 @@
                     </div>
                     <div class="col-md-12 p-description">
                         {!!  $data['product']->description!!}
+
                     </div>
                 </div>
 
                 <div id="p-content" class="col-md-12">
                     {!!  $data['product']->content!!}
+                    <div class="contact-info">
+                        {!!  $listFrontEndInfo['configContact']->content !!}
+                    </div>
+
                 </div>
                 <div id="p-other" class="col-md-12">
                     <h3 class="title">Có Thể Bạn Quan Tâm</h3>

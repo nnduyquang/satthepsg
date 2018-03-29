@@ -4,6 +4,7 @@ namespace App\Repositories\Frontend;
 
 
 use App\CategoryItem;
+use App\Config;
 use App\Post;
 use App\Product;
 
@@ -13,30 +14,12 @@ class FrontendRepository implements FrontendRepositoryInterface
     {
         $sidebar = [];
 //        $categoryPosts = CategoryItem::where('type', 0)->get();
-        $categoryProducts = CategoryItem::where('type', 1)->where('isActive',1)->get();
+        $categoryProducts = CategoryItem::where('type', 1)->where('isActive', 1)->get();
 //        $sidebar['categoryPosts'] = $categoryPosts;
         $sidebar['categoryProducts'] = $categoryProducts;
         return $sidebar;
     }
 
-    public function getProductByCategoryMain($path)
-    {
-        $data = [];
-        $categoryMain = CategoryItem::where('path', $path)->first();
-        $categorySub=CategoryItem::where('parent_id', $categoryMain->id)->get();
-        $products =   $products=Product::whereIn('category_product_id',function($query)use ($categoryMain){
-            $query->select('id')->from(with(new CategoryItem)->getTable())->where('parent_id',$categoryMain->id);
-        })->orderBy('id','DESC')->get();
-        foreach ($products as $key => $data) {
-            $data->price = number_format($data->price, 0, ',', '.');
-            $data->final_price = number_format($data->final_price, 0, ',', '.');
-        }
-        $data['category']=$categoryMain;
-        $data['categorySub']=$categorySub;
-        $data['products'] = $products;
-        $data['type']=1;
-        return $data;
-    }
 
     public function getServiceByCategory($path)
     {
@@ -52,12 +35,12 @@ class FrontendRepository implements FrontendRepositoryInterface
 
     public function getAllListCategoryAndProduct()
     {
-        $categoryProducts = CategoryItem::where('type', 1)->where('level',0)->where('isActive',1)->get();
-        foreach ($categoryProducts as $key=>$data){
-            $products=Product::whereIn('category_product_id',function($query)use ($data){
-                $query->select('id')->from(with(new CategoryItem)->getTable())->where('parent_id',$data->id);
-            })->orderBy('id','DESC')->take(8)->get();
-            $data->listProduct=$products;
+        $categoryProducts = CategoryItem::where('type', 1)->where('level', 0)->where('isActive', 1)->get();
+        foreach ($categoryProducts as $key => $data) {
+            $products = Product::whereIn('category_product_id', function ($query) use ($data) {
+                $query->select('id')->from(with(new CategoryItem)->getTable())->where('parent_id', $data->id);
+            })->orderBy('id', 'DESC')->take(8)->get();
+            $data->listProduct = $products;
         }
         $data['categoryProducts'] = $categoryProducts;
         return $data;
@@ -89,10 +72,12 @@ class FrontendRepository implements FrontendRepositoryInterface
         return $data;
     }
 
-    public function getFooterInfo()
+    public function getFrontEndInfo()
     {
-        $listFooterCategory = CategoryItem::where('type', 1)->get();
-        return $listFooterCategory;
+        $data = [];
+        $configContact=Config::where('name','config-contact')->first();
+        $data['configContact']=$configContact;
+        return $data;
     }
 
     public function getMainPage($path)
@@ -107,23 +92,71 @@ class FrontendRepository implements FrontendRepositoryInterface
         $keySearch = preg_replace('/\s+/', ' ', $keySearch);
         $products = Product::where('name', 'like', '%' . $keySearch . '%')->orderBy('id', 'DESC')->get();
         $data['products'] = $products;
-        $data['key-search']=$keySearch;
+        $data['key-search'] = $keySearch;
+        return $data;
+    }
+
+    public function getProductByCategoryMain($path)
+    {
+        $data = [];
+        $categoryMain = CategoryItem::where('path', $path)->first();
+        $categorySub = CategoryItem::where('parent_id', $categoryMain->id)->get();
+        $products = $products = Product::whereIn('category_product_id', function ($query) use ($categoryMain) {
+            $query->select('id')->from(with(new CategoryItem)->getTable())->where('parent_id', $categoryMain->id);
+        })->orderBy('id', 'DESC')->get();
+        foreach ($products as $key => $data) {
+            $data->price = number_format($data->price, 0, ',', '.');
+            $data->final_price = number_format($data->final_price, 0, ',', '.');
+        }
+        $data['category'] = $categoryMain;
+        $data['categorySub'] = $categorySub;
+        $data['products'] = $products;
+        $data['type'] = 1;
         return $data;
     }
 
     public function getProductByCategorySub($pathParent, $pathSub)
     {
         $data = [];
-        $categorySub=CategoryItem::where('path',$pathSub)->first();
-        $products=Product::where('category_product_id',$categorySub->id)->get();
+        $categorySub = CategoryItem::where('path', $pathSub)->first();
+        $products = Product::where('category_product_id', $categorySub->id)->get();
         foreach ($products as $key => $data) {
             $data->price = number_format($data->price, 0, ',', '.');
             $data->final_price = number_format($data->final_price, 0, ',', '.');
         }
-        $data['category']=$categorySub;
-        $data['categorySub']=[];
-        $data['products']=$products;
-        $data['type']=2;
+        $data['category'] = $categorySub;
+        $data['categorySub'] = [];
+        $data['products'] = $products;
+        $data['type'] = 2;
+        return $data;
+    }
+
+    public function getPageContent($path)
+    {
+        $data = [];
+        $page = Post::where('path', $path)->first();
+        $data['page'] = $page;
+        return $data;
+    }
+
+    public function getCategoryPostContent($path)
+    {
+        $data = [];
+        $categoryPost = CategoryItem::where('path', $path)->first();
+        $posts = Post::where('post_type', $categoryPost->id)->get();
+        $categoryPost->posts = $posts;
+        $data['categoryPost'] = $categoryPost;
+        $data['type'] = 1;
+        return $data;
+    }
+
+    public function getPostDetail($pathParent, $pathSub)
+    {
+        $data = [];
+//        $categoryPost = CategoryItem::where('path', $pathParent)->first();
+        $post = Post::where('path', $pathSub)->first();
+        $data['post']=$post;
+        $data['type'] = 2;
         return $data;
     }
 

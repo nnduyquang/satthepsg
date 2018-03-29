@@ -27,11 +27,13 @@
         </li>
         <li><a href="{{ route('product.index') }}"><i class="fa fa-link"></i> <span>Sản Phẩm</span></a>
         </li>
+        <li><a href="{{ route('config.index') }}"><i class="fa fa-link"></i> <span>Cấu Hình</span></a>
+        </li>
 
         {{--<li><a href="{{ route('tuyendung.index') }}"><i class="fa fa-link"></i> <span>Tuyển Dụng</span></a>--}}
         {{--</li>--}}
-        <li><a href="{{ route('menu.index') }}"><i class="fa fa-link"></i> <span>Quản Lý Menu</span></a>
-        </li>
+        {{--<li><a href="{{ route('menu.index') }}"><i class="fa fa-link"></i> <span>Quản Lý Menu</span></a>--}}
+        {{--</li>--}}
         {{--<li class="treeview">--}}
         {{--<a href="#"><i class="fa fa-link"></i><span>Cấu Hình</span>--}}
         {{--<span class="pull-right-container">--}}

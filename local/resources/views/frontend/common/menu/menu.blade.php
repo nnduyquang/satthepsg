@@ -40,19 +40,35 @@
         <div class="container">
             <div class="col-md-12 p-0">
                 <ul class="main_menu">
-                    <li class="li-normal"><a href="#">Menu 1</a></li>
-                    <li class="li-normal"><a href="#">Menu 2</a></li>
-                    <li class="has-item-down"><a href="#">Menu 3</a>
+                    <li class="li-normal"><a href="{{URL::to('/')}}">Trang Chủ</a></li>
+                    <li class="li-normal"><a href="{{URL::to('/trang/gioi-thieu')}}">Giới Thiệu</a></li>
+                    <li class="has-item-down"><a href="#">Sản Phẩm</a>
+                        <div class="drop-down col-md-12">
+                            <div class="row">
+                                @foreach($listMenu['categoryMain'] as $key=>$item)
+                                <div class="col-md-3">
+                                    <ul>
+                                        <li class="title"><a href="{{URL::to('danh-muc/'.$item->path)}}">{{$item->name}}</a></li>
+                                        @foreach($item->categorySub as $key2=>$item2)
+                                        <li class="sub-item"><a href="{{URL::to('danh-muc/'.$item->path.'/'.$item2->path)}}">{{$item2->name}}</a></li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                                @endforeach
+
+                            </div>
+                        </div>
+                    </li>
+                    <li class="has-item-down-price"><a href="{{URL::to('bai-viet/'.$listMenu['postMain']->path)}}">{{$listMenu['postMain']->name}}</a>
                         <ul class="sub_menu">
-                            <li><a href="#">Menu 31 31</a></li>
-                            <li><a href="#">Menu 31 31</a></li>
-                            <li><a href="#">Menu 31 31</a></li>
-                            <li><a href="#">Menu 31 31</a></li>
+                            @foreach($listMenu['postMain']->postSub as $key=>$item)
+                            <li><a href="{{URL::to('bai-viet/'.$listMenu['postMain']->path.'/'.$item->path)}}">{{$item->title}}</a></li>
+                            @endforeach
+
                         </ul>
                     </li>
-                    <li class="li-normal"><a href="#">Menu 4</a></li>
-                    <li class="li-normal"><a href="#">Menu 5</a></li>
-                    <li class="li-normal"><a href="#">Menu 6</a></li>
+                    <li class="li-normal"><a href="{{URL::to('/trang/lien-he')}}">Tin Tức</a></li>
+                    <li class="li-normal"><a href="{{URL::to('/trang/lien-he')}}">Liên Hệ</a></li>
                 </ul>
             </div>
         </div>

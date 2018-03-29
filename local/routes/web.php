@@ -9,8 +9,9 @@ Route::get('/san-pham/{path}','FrontendController@getProductInfo');
 Route::get('/tim-kiem', function () {
     return view('frontend.search.index');
 });
-
-
+Route::get('/trang/{path}','FrontendController@getPageContent');
+Route::get('/bai-viet/{path}','FrontendController@getCategoryPostContent');
+Route::get('/bai-viet/{pathParent}/{pathSub}','FrontendController@getPostDetail');
 
 Route::get('/admin/sml_login', 'AuthController@checklogin');
 Route::post('sml_login', 'AuthController@login')->name('login');
@@ -88,6 +89,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::patch('sml_admin/menu-update/{id}','MenuController@updateMenu' )->name('menu.update');
     Route::get('sml_admin/load-tree','MenuController@loadTreeMenu');
     Route::delete('sml_admin/menu-delete/{id}','MenuController@deleteMenu');
+
+    Route::get('sml_admin/config/', ['as' => 'config.index', 'uses' => 'ConfigController@getConfig']);
+    Route::post('sml_admin/config/', ['as' => 'config.store', 'uses' => 'ConfigController@saveConfig']);
 
 
 });
