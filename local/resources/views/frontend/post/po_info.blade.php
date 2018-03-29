@@ -1,6 +1,6 @@
 <div id="po_info">
     <div class="container p-0">
-        <div class="row">
+        <div class="row m-0">
             <div class="col-md-3 p-0">
                 @include('frontend.common.sidebar.index')
             </div>
@@ -20,7 +20,7 @@
                 @endif
                 @if($data['type']==1)
                     <div class="po_info_detail col-md-12 p-0">
-                        <div class="row">
+                        <div class="row m-0">
                             @foreach($data['categoryPost']->posts as $key=>$item)
                                 <div class="one-po-item col-md-4 card">
                                     <a href="{{URL::to('bai-viet/'.$data['categoryPost']->path.'/'.$item->path)}}">  {{ Html::image($item->image,'',array('class'=>'po_item_img'))}}</a>

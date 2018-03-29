@@ -1,11 +1,11 @@
 <div id="h_introduce" content="container-fluid p-0">
     <div class="container p-0">
-        <div class="row">
+        <div class="row m-0">
             <div id="h_introduce_left text-center" class="col-md-4">
-                {{ Html::image('images/temps/home/h-introduce-logo.png','',array('class'=>'h_introduce_logo_img'))}}
+                {{ Html::image('images/logo/logo_main.png','',array('class'=>'h_introduce_logo_img'))}}
             </div>
             <div id="h_introduce_right" class="col-md-8 justify-content-left align-self-center">
-                <h1 class="title">Chào Mừng Quý Khách Đến Với Hoàng Hải Minh</h1>
+                <h1 class="title">Chào Mừng Quý Khách Đến Với Thép Khánh Nam</h1>
                 <p class="description">
                     CÔNG TY TNHH LINK HOME với kinh nghiệm gần 10 năm trong nghành trang trí nội thất .<br>
 
@@ -31,7 +31,7 @@
             {{--</div>--}}
             <div id="h_introduce_bottom" class="col-md-12">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-6">
                         <a href="#">
                             {{ Html::image('images/beauty/h_introduce_1.jpg','',array('class'=>'h_introduce_bar_img'))}}
                             <div class="h_home_info">
@@ -40,7 +40,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-6">
                         <a href="#">
                             {{ Html::image('images/beauty/h_introduce_2.jpg','',array('class'=>'h_introduce_bar_img'))}}
                             <div class="h_home_info">

@@ -1,4 +1,4 @@
-<div id="menu" class="container-fluid p-0">
+<div id="menu" class="container-fluid p-0 d-none d-md-block">
     <div id="menu_top">
         <div class="container">
             <div class="col-md-12">
@@ -67,7 +67,7 @@
 
                         </ul>
                     </li>
-                    <li class="li-normal"><a href="{{URL::to('/trang/lien-he')}}">Tin Tức</a></li>
+                    <li class="li-normal"><a href="{{URL::to('/tin-tuc')}}">Tin Tức</a></li>
                     <li class="li-normal"><a href="{{URL::to('/trang/lien-he')}}">Liên Hệ</a></li>
                 </ul>
             </div>

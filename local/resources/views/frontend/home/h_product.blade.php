@@ -1,12 +1,12 @@
 <div id="h_product">
     <div class="container p-0">
-        <div class="row">
+        <div class="row m-0">
             <div class="col-md-3 p-0">
                 @include('frontend.common.sidebar.index')
             </div>
             <div class="h_product_info col-md-9">
                 @foreach($data['categoryProducts'] as $key=>$item)
-                    <div class="col-md-12">
+                    <div class="col-md-12 p-0">
                         <h3 class="title">{{$item->name}}</h3>
                         <div class="list-product">
                             <div class="row">

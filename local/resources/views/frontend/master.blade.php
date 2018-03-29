@@ -20,13 +20,13 @@
 </header>
 
 <div id="blurrMe">
-    {{--@include('frontend.common.menu.m-menu')--}}
+    @include('frontend.common.menu.m-menu')
     @include('frontend.common.menu.menu')
     @yield('slider')
     @yield('container')
     @include('frontend.common.special')
 </div>
-{{--@include('frontend.common.menu.m-sidebar')--}}
+@include('frontend.common.menu.m-sidebar')
 <div class="footer">
     @include('frontend.common.footer')
 </div>
@@ -41,14 +41,13 @@
 </script>
 {{--@yield('scripts')--}}
 {{ Html::script('js/scripts.js') }}
-{{--<div class="callback d-lg-none d-md-none">--}}
-{{--<div class="phone_animation">--}}
-{{--<div class="phone_animation_circle"></div>--}}
-{{--<div class="phone_animation_circle_fill"></div>--}}
-{{--<a href="tel:02866830091" class="phone_animation_circle_fill_img"><i class="fas fa-phone"--}}
-{{--aria-hidden="true"></i></a>--}}
-{{--</div>--}}
-{{--</div>--}}
+<div class="callback d-lg-none d-md-none">
+    <div class="phone_animation">
+        <div class="phone_animation_circle"></div>
+        <div class="phone_animation_circle_fill"></div>
+        <a href="tel:02866830091" class="phone_animation_circle_fill_img"><i class="fas fa-phone" aria-hidden="true"></i></a>
+    </div>
+</div>
 
 
 </body>

@@ -80,5 +80,16 @@ class FrontendController extends Controller
         return view('frontend.post.index', compact('data'));
 
     }
+
+    public function getAllNews(){
+        $data = $this->frontendRepository->getAllNews();
+        return view('frontend.news.index', compact('data'));
+    }
+
+    public function getNewsDetail($path){
+        $data = $this->frontendRepository->getNewsDetail($path);
+        return view('frontend.news.index', compact('data'));
+    }
+
 }
 

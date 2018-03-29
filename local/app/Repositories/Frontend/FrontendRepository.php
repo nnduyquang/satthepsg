@@ -75,8 +75,10 @@ class FrontendRepository implements FrontendRepositoryInterface
     public function getFrontEndInfo()
     {
         $data = [];
-        $configContact=Config::where('name','config-contact')->first();
-        $data['configContact']=$configContact;
+        $configContact = Config::where('name', 'config-contact')->first();
+        $data['configContact'] = $configContact;
+        $categoryMain=CategoryItem::where('type',CATEGORY_PRODUCT)->where('level',MENU_GOC)->get();
+        $data['categoryMain']=$categoryMain;
         return $data;
     }
 
@@ -152,11 +154,36 @@ class FrontendRepository implements FrontendRepositoryInterface
 
     public function getPostDetail($pathParent, $pathSub)
     {
-        $data = [];
+
 //        $categoryPost = CategoryItem::where('path', $pathParent)->first();
         $post = Post::where('path', $pathSub)->first();
-        $data['post']=$post;
+        $data['post'] = $post;
         $data['type'] = 2;
+        return $data;
+    }
+
+    public function getAllNews()
+    {
+        $data = [];
+        $news = Post::where('post_type',function($query){
+            $query->select('id')->from(with(new CategoryItem)->getTable())->where('path', 'tin-tuc');
+        })->get();
+        $data['news'] = $news;
+        $data['type']=1;
+        return $data;
+    }
+
+    public function getNewsDetail($path)
+    {
+        $data = [];
+        $news=Post::where('path',$path)->first();
+
+        $others = Post::where('post_type',function($query){
+            $query->select('id')->from(with(new CategoryItem)->getTable())->where('path', 'tin-tuc');
+        })->where('id','!=',$news->id)->get();
+        $data['news'] = $news;
+        $data['others'] = $others;
+        $data['type']=2;
         return $data;
     }
 

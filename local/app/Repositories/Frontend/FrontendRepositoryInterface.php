@@ -29,4 +29,8 @@ interface FrontendRepositoryInterface
     public function getCategoryPostContent($path);
 
     public function getPostDetail($pathParent, $pathSub);
+
+    public function getAllNews();
+
+    public function getNewsDetail($path);
 }

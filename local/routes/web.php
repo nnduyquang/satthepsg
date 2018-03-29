@@ -6,8 +6,13 @@ Route::get('/danh-muc/{pathParent}/{pathSub}','FrontendController@getProductByCa
 Route::get('/danh-muc/{path}','FrontendController@getProductByCategoryMain');
 
 Route::get('/san-pham/{path}','FrontendController@getProductInfo');
+Route::get('/tin-tuc/','FrontendController@getAllNews');
+Route::get('/tin-tuc/{path}','FrontendController@getNewsDetail');
 Route::get('/tim-kiem', function () {
     return view('frontend.search.index');
+});
+Route::get('/category', function () {
+    return view('frontend.common.menu.m-category');
 });
 Route::get('/trang/{path}','FrontendController@getPageContent');
 Route::get('/bai-viet/{path}','FrontendController@getCategoryPostContent');
