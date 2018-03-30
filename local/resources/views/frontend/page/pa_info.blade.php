@@ -1,6 +1,6 @@
 <div id="pa_info">
     <div class="container p-0">
-        <div class="row">
+        <div class="row m-0">
             <div class="col-md-3 p-0">
                 @include('frontend.common.sidebar.index')
             </div>

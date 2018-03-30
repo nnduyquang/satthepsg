@@ -30,10 +30,10 @@
         <h3>HỖ TRỢ TRỰC TUYẾN</h3>
         <ul class="ul-ht-info">
             <li>
-                <h4 class="ht-name">Lê Duy Huy</h4>
-                <div>Zalo 1: 0971.703.972</div>
-                <div>Zalo 2: 0933.589.089</div>
-                {{--<div>Email: phunsuongduyhuy@gmail.com</div>--}}
+                <h4 class="ht-name">Thép Khánh Nam</h4>
+                <div><i class="fas fa-phone-square" style="color:#004792"></i> 097.388.9336</div>
+                <div><i class="fas fa-phone-square" style="color:#004792"></i> 0914.675.777</div>
+                <div><i class="fas fa-envelope-square" style="color:#004792"></i> vlxdtaysaigon@gmail.com</div>
             </li>
         </ul>
     </div>

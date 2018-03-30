@@ -7,23 +7,15 @@
             <div id="h_introduce_right" class="col-md-8 justify-content-left align-self-center">
                 <h1 class="title">Chào Mừng Quý Khách Đến Với Thép Khánh Nam</h1>
                 <p class="description">
-                    CÔNG TY TNHH LINK HOME với kinh nghiệm gần 10 năm trong nghành trang trí nội thất .<br>
+                    Thép Khánh Nam luôn là nhà phân phối vật liệu xây dựng hàng đầu ở khu vực thành
 
-                    Khẳng định được thương hiệu LINK HOME trong lòng khách hàng..<br>
+                    phố Hồ CHí Minh và khu vực lân cận. Với phương châm lấy khách hàng làm
 
-                    CÔNG TY luôn đặt tiêu chí : Trách nhiệm và Chất lượng lên hàng đầu..<br>
+                    trọng tâm, sản phẩm và dịch vụ của Thép Khánh Nam được đông đảo khách hàng
 
-                    VỚI :<br>
+                    gần xa biết tới và tin dùng. Chính trong những thời kỳ khó khăn nhất tập thể công
 
-                    - ĐỘI NGŨ NHÂN VIÊN NHIỆT TÌNH, CHU ĐÁO.<br>
-
-                    - TƯ VẤN MIỄN PHÍ.<br>
-
-                    - THIẾT KẾ THEO Ý THÍCH, PHONG THỦY, KHÔNG GIAN PHÙ HỢP.<br>
-
-                    - ĐƯỢC THI CÔNG BỞI NHỮNG THỢ CÓ TAY NGHỀ CAO..<br>
-
-                    SẼ ĐEM ĐẾN CHO KHÁCH HÀNG SỰ HÀI LÒNG TUYỆT ĐỐI !.<br>
+                    nhân viên Thép Khánh Nam cùng khách hàng vượt qua và phát triển như hiện nay.
                 </p>
             </div>
             {{--<div id="h_introduce_bottom" class="col-md-12">--}}
@@ -32,7 +24,7 @@
             <div id="h_introduce_bottom" class="col-md-12">
                 <div class="row">
                     <div class="col-6">
-                        <a href="#">
+                        <a href="{{URL::to('danh-muc/sat-thep-xay-dung')}}">
                             {{ Html::image('images/beauty/h_introduce_1.jpg','',array('class'=>'h_introduce_bar_img'))}}
                             <div class="h_home_info">
                                 <h4>Sản Phẩm Mới</h4>
@@ -41,7 +33,7 @@
                         </a>
                     </div>
                     <div class="col-6">
-                        <a href="#">
+                        <a href="{{URL::to('bai-viet/bao-gia-sat-thep')}}">
                             {{ Html::image('images/beauty/h_introduce_2.jpg','',array('class'=>'h_introduce_bar_img'))}}
                             <div class="h_home_info">
                                 <h4>Giá VLXD Hôm Nay</h4>

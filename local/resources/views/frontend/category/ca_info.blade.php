@@ -14,7 +14,7 @@
                     <div class="list-sub-category col-md-12 p-0">
                         <div class="row">
                             @foreach($data['categorySub'] as $key=>$item)
-                            <div class="one-product col-md-4 card">
+                            <div class="one-product col-md-4 col-6 card">
                                 <a href="{{URL::to('danh-muc/'.$data['category']->path.'/'.$item->path)}}">  {{ Html::image($item->image,'',array('class'=>'ca_category_sub_item_img'))}}</a>
                                 <div class="card-body">
                                     <h4 class="title-product"><a href="{{URL::to('danh-muc/'.$item->path)}}">{{$item->name}}</a></h4>

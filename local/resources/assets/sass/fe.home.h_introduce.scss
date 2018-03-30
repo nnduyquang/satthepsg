@@ -72,3 +72,12 @@
     }
   }
 }
+@media (max-width: 767px) {
+  #h_introduce {
+    #h_introduce_bottom {
+      a::after {
+        display: none;
+      }
+    }
+  }
+}

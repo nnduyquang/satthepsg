@@ -1,9 +1,12 @@
 @extends('frontend.master')
 @section('title')
-    Nội Thất
+{{$data['page']->seo_title}}
 @stop
 @section('description')
-    Nội Thất
+{{$data['page']->seo_description}}
+@stop
+@section('keyword')
+{{$data['page']->seo_keywords}}
 @stop
 @section('styles')
     {{ Html::style('css/themes/default/default.css') }}

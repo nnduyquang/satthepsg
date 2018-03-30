@@ -42,7 +42,14 @@ class FrontendRepository implements FrontendRepositoryInterface
             })->orderBy('id', 'DESC')->take(8)->get();
             $data->listProduct = $products;
         }
+        $news = Post::where('post_type', function ($query) {
+            $query->select('id')->from(with(new CategoryItem)->getTable())->where('path', 'tin-tuc');
+        })->take(3)->get();
+        foreach ($news as $key => $item) {
+            $item->description = cat_chuoi_dai_thanh_ngan(loai_bo_html_tag($item->description), 90);
+        }
         $data['categoryProducts'] = $categoryProducts;
+        $data['news'] = $news;
         return $data;
     }
 
@@ -77,8 +84,8 @@ class FrontendRepository implements FrontendRepositoryInterface
         $data = [];
         $configContact = Config::where('name', 'config-contact')->first();
         $data['configContact'] = $configContact;
-        $categoryMain=CategoryItem::where('type',CATEGORY_PRODUCT)->where('level',MENU_GOC)->get();
-        $data['categoryMain']=$categoryMain;
+        $categoryMain = CategoryItem::where('type', CATEGORY_PRODUCT)->where('level', MENU_GOC)->get();
+        $data['categoryMain'] = $categoryMain;
         return $data;
     }
 
@@ -165,25 +172,25 @@ class FrontendRepository implements FrontendRepositoryInterface
     public function getAllNews()
     {
         $data = [];
-        $news = Post::where('post_type',function($query){
-            $query->select('id')->from(with(new CategoryItem)->getTable())->where('path', 'tin-tuc');
-        })->get();
+        $newsMain = CategoryItem::where('path', 'tin-tuc')->first();
+        $news = Post::where('post_type', $newsMain->id)->get();
+        $data['newsMain'] = $newsMain;
         $data['news'] = $news;
-        $data['type']=1;
+        $data['type'] = 1;
         return $data;
     }
 
     public function getNewsDetail($path)
     {
         $data = [];
-        $news=Post::where('path',$path)->first();
+        $news = Post::where('path', $path)->first();
 
-        $others = Post::where('post_type',function($query){
+        $others = Post::where('post_type', function ($query) {
             $query->select('id')->from(with(new CategoryItem)->getTable())->where('path', 'tin-tuc');
-        })->where('id','!=',$news->id)->get();
+        })->where('id', '!=', $news->id)->get();
         $data['news'] = $news;
         $data['others'] = $others;
-        $data['type']=2;
+        $data['type'] = 2;
         return $data;
     }
 

@@ -9,6 +9,7 @@
     <meta name="keywords" content="@yield('keyword')">
     <meta name="description" content="@yield('description')">
     <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="{{URL::to('images/logo/logo_main.ico')}}">
     {{ Html::style('css/core.common.css') }}
     {{ Html::style('css/core.frontend.css') }}
     {{ Html::style('css/frontend.css') }}
@@ -45,7 +46,7 @@
     <div class="phone_animation">
         <div class="phone_animation_circle"></div>
         <div class="phone_animation_circle_fill"></div>
-        <a href="tel:02866830091" class="phone_animation_circle_fill_img"><i class="fas fa-phone" aria-hidden="true"></i></a>
+        <a href="tel:0973889336" class="phone_animation_circle_fill_img"><i class="fas fa-phone" aria-hidden="true"></i></a>
     </div>
 </div>
 

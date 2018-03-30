@@ -1,9 +1,9 @@
 @extends('frontend.master')
 @section('title')
-    Nội Thất
+    Thép Khánh Nam
 @stop
 @section('description')
-    Nội Thất
+    Tìm kiếm sắt thép
 @stop
 @section('styles')
     {{ Html::style('css/themes/default/default.css') }}

@@ -4,8 +4,8 @@
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-7 justify-content-left align-self-center text-left">
-                        <span><i class="fa fa-phone" aria-hidden="true"></i> 0965.322.239 - 0901.196.676</span>
-                        <span><i class="fa fa-home" aria-hidden="true"></i> 55/4 KP3 Hà Huy Giáp, Q.12, TPHCM</span>
+                        <span><i class="fa fa-phone" aria-hidden="true"></i> 097.388.9336 - 0914.675.777</span>
+                        {{--<span><i class="fa fa-home" aria-hidden="true"></i> 55/4 KP3 Hà Huy Giáp, Q.12, TPHCM</span>--}}
                     </div>
                     {{--<div class="col-md-2 p-0">--}}
                     {{--{{ Html::image('images/temps/logo/logo_demo.png','',array('class'=>'menu_logo'))}}--}}
@@ -16,7 +16,7 @@
                                 <li><a href="#" id="clickSearch"><i class="fa fa-search" aria-hidden="true"></i></a>
                                 </li>
                                 <li style="width: 100%">
-                                    {!! Form::open(array('method'=>'POST','id'=>'formSearch')) !!}
+                                    {!! Form::open(array('route' => 'search','method'=>'POST','id'=>'formSearch')) !!}
                                     {!! Form::text('key-search', '', array('placeholder' => 'Tìm Kiếm','class' => 'form-control','id'=>'searchInput')) !!}
                                     {!! Form::close() !!}
                                 </li>

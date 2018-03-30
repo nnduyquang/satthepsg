@@ -8,9 +8,7 @@ Route::get('/danh-muc/{path}','FrontendController@getProductByCategoryMain');
 Route::get('/san-pham/{path}','FrontendController@getProductInfo');
 Route::get('/tin-tuc/','FrontendController@getAllNews');
 Route::get('/tin-tuc/{path}','FrontendController@getNewsDetail');
-Route::get('/tim-kiem', function () {
-    return view('frontend.search.index');
-});
+Route::post('/tim-kiem','FrontendController@getSearch')->name('search');
 Route::get('/category', function () {
     return view('frontend.common.menu.m-category');
 });

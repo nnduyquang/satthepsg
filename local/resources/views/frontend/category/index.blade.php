@@ -1,9 +1,27 @@
 @extends('frontend.master')
 @section('title')
-    Nội Thất
+    @if($data['type']==1)
+{{$data['category']->seo_title}}
+    @endif
+    @if($data['type']==2)
+{{$data['category']->seo_title}}
+    @endif
 @stop
 @section('description')
-    Nội Thất
+    @if($data['type']==1)
+{{$data['category']->seo_description}}
+    @endif
+    @if($data['type']==2)
+{{$data['category']->seo_description}}
+    @endif
+@stop
+@section('keyword')
+    @if($data['type']==1)
+{{$data['category']->seo_keywords}}
+    @endif
+    @if($data['type']==2)
+{{$data['category']->seo_keywords}}
+    @endif
 @stop
 @section('styles')
     {{ Html::style('css/themes/default/default.css') }}
