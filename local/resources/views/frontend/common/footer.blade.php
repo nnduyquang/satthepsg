@@ -3,6 +3,7 @@
     <div class="footer-top">
         <div class="container">
             <div class="row">
+
                 <div class="col-md-4">
                     {{--{{ Html::image('images/logo/logo duyhoai_new.png','',array('class'=>'menu_logo'))}}--}}
                     <ul>
@@ -23,6 +24,9 @@
                             <li><a href="{{URL::to('bai-viet/'.$listMenu['postMain']->path.'/'.$item->path)}}">{{$item->title}}</a></li>
                         @endforeach
                     </ul>
+                </div>
+                <div class="col-md-4">
+                    {{ Html::image('images/logo/logo_footer.png','',array('class'=>'menu_logo'))}}
                 </div>
                 {{--<div class="col-md-3">--}}
                 {{--<h3>Giới Thiệu</h3>--}}

@@ -40,7 +40,11 @@ class FrontendRepository implements FrontendRepositoryInterface
             $products = Product::whereIn('category_product_id', function ($query) use ($data) {
                 $query->select('id')->from(with(new CategoryItem)->getTable())->where('parent_id', $data->id);
             })->orderBy('id', 'DESC')->take(8)->get();
-            $data->listProduct = $products;
+            if (count($products) == 0) {
+                unset($categoryProducts[$key]);
+            } else {
+                $data->listProduct = $products;
+            }
         }
         $news = Post::where('post_type', function ($query) {
             $query->select('id')->from(with(new CategoryItem)->getTable())->where('path', 'tin-tuc');

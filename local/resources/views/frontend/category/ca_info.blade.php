@@ -6,7 +6,7 @@
             </div>
             <div class="ca_info_detail col-md-9">
                 <h1 class="title">{{$data['category']->name}}</h1>
-                {{ Html::image('images/temps/category/category-ca-info-intro.jpg','',array('class'=>'ca_info_intro_img'))}}
+                {{ Html::image($data['category']->image,'',array('class'=>'ca_info_intro_img'))}}
                 <div class="description">
                     {!! $data['category']->description !!}
                 </div>
