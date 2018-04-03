@@ -24,16 +24,16 @@
             <div id="h_introduce_bottom" class="col-md-12">
                 <div class="row">
                     <div class="col-6">
-                        <a href="{{URL::to('danh-muc/sat-thep-xay-dung')}}">
-                            {{ Html::image('images/beauty/h_introduce_1.jpg','',array('class'=>'h_introduce_bar_img'))}}
+                        <a href="{{URL::to('danh-muc/cat-xay-dung')}}">
+                            {{ Html::image('images/beauty/h_introduce_3.jpg','',array('class'=>'h_introduce_bar_img'))}}
                             <div class="h_home_info">
-                                <h4>Sản Phẩm Mới</h4>
+                                <h4>Cát Xây Dựng</h4>
                                 <span>Xem Chi Tiết</span>
                             </div>
                         </a>
                     </div>
                     <div class="col-6">
-                        <a href="{{URL::to('bai-viet/bao-gia-sat-thep')}}">
+                        <a href="{{URL::to('bai-viet/gia-vat-lieu-xay-dung')}}">
                             {{ Html::image('images/beauty/h_introduce_2.jpg','',array('class'=>'h_introduce_bar_img'))}}
                             <div class="h_home_info">
                                 <h4>Giá VLXD Hôm Nay</h4>

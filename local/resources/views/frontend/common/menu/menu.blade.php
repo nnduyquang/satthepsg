@@ -4,7 +4,7 @@
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-7 justify-content-left align-self-center text-left">
-                        <span><i class="fa fa-phone" aria-hidden="true"></i> 097.388.9336 - 0914.675.777</span>
+                        <span><i class="fa fa-phone" aria-hidden="true"></i> 0938.318.678 - 0914.675.777</span>
                         {{--<span><i class="fa fa-home" aria-hidden="true"></i> 55/4 KP3 Hà Huy Giáp, Q.12, TPHCM</span>--}}
                     </div>
                     {{--<div class="col-md-2 p-0">--}}
@@ -64,7 +64,13 @@
                             @foreach($listMenu['postMain']->postSub as $key=>$item)
                             <li><a href="{{URL::to('bai-viet/'.$listMenu['postMain']->path.'/'.$item->path)}}">{{$item->title}}</a></li>
                             @endforeach
-
+                        </ul>
+                    </li>
+                    <li class="has-item-down-price"><a href="{{URL::to('bai-viet/'.$listMenu['priceMain']->path)}}">{{$listMenu['priceMain']->name}}</a>
+                        <ul class="sub_menu">
+                            @foreach($listMenu['priceMain']->priceSub as $key=>$item)
+                                <li><a href="{{URL::to('bai-viet/'.$listMenu['priceMain']->path.'/'.$item->path)}}">{{$item->title}}</a></li>
+                            @endforeach
                         </ul>
                     </li>
                     <li class="li-normal"><a href="{{URL::to('/tin-tuc')}}">Tin Tức</a></li>

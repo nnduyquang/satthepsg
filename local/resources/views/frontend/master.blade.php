@@ -46,14 +46,14 @@
     <div class="phone_animation">
         <div class="phone_animation_circle"></div>
         <div class="phone_animation_circle_fill"></div>
-        <a href="tel:0973889336" class="phone_animation_circle_fill_img"><i class="fas fa-phone" aria-hidden="true"></i></a>
+        <a href="tel:0938318678" class="phone_animation_circle_fill_img"><i class="fas fa-phone" aria-hidden="true"></i></a>
     </div>
 </div>
 <div class="callback d-none d-md-block" style="right: 150px;bottom: -30px;left:inherit">
     <div class="phone_animation">
         <div class="phone_animation_circle"></div>
         <div class="phone_animation_circle_fill"></div>
-        <a href="tel:0933589089" class="phone_animation_circle_fill_img"><i class="fas fa-phone"
+        <a href="tel:0938318678" class="phone_animation_circle_fill_img"><i class="fas fa-phone"
                                                                             aria-hidden="true"></i></a>
     </div>
 </div>
