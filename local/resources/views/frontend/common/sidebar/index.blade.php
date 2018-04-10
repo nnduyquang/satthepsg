@@ -7,15 +7,6 @@
                    class="title">{{$sidebar['categoryProducts'][$i]->name}}</a>
                 <ul class="ul-normal">
 
-                    {{--<li class="has-sub-item"><a href="{{URL::to('#')}}">Tên Sản Phẩm</a>--}}
-                    {{--<ul>--}}
-                    {{--<li><a href="#">Menu sub 1</a></li>--}}
-                    {{--<li><a href="#">Menu sub 2</a></li>--}}
-                    {{--<li><a href="#">Menu sub 3</a></li>--}}
-                    {{--<li><a href="#">Menu sub 4</a></li>--}}
-                    {{--<li><a href="#">Menu sub 5</a></li>--}}
-                    {{--</ul>--}}
-                    {{--</li>--}}
                     @foreach($sidebar['categoryProducts'] as $key=>$data)
                         @if($data->level==1 &&$data->parent_id==$sidebar['categoryProducts'][$i]->id)
                             <li class="li-normal"><a href="{{URL::to('danh-muc/'.$sidebar['categoryProducts'][$i]->path.'/'.$data->path)}}">{{$data->name}}</a></li>
