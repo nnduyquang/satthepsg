@@ -1,5 +1,5 @@
 <div id="p_info">
-    <div class="container p-0">
+    <div class="container">
         <div class="row">
             <div class="col-md-3 p-0">
                 @include('frontend.common.sidebar.index')
