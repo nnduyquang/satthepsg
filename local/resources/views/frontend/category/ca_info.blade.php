@@ -36,7 +36,7 @@
                                     <a href="{{URL::to('san-pham/'.$item->path)}}">  {{ Html::image($item->image,'',array('class'=>'ca_product_img'))}}</a>
                                 </div>
                                 @if($item->sale!=0)
-                                    <span class="discount">{{$item2->sale}}%</span>
+                                    <span class="discount">{{$item->sale}}%</span>
                                 @endif
                                 <div class="card-body">
                                     <h4 class="title-product"><a

@@ -26,7 +26,7 @@
                         @endif
 
                         {{--<span class="price-contact">Liên Hệ</span>--}}
-                        <input class="btn-confirm btn" type="button" value="0973.889.336">
+                        <input class="btn-confirm btn" type="button" value="0938.318.678">
                     </div>
                     <div class="col-md-12 p-description">
                         {!!  $data['product']->description!!}

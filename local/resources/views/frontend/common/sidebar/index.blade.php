@@ -1,4 +1,4 @@
-<div id="sidebar" class="col-md-12 d-none d-md-block .d-lg-block">
+<div id="sidebar" class="col-md-12 d-none d-md-block d-lg-block">
     <h3>DANH MỤC SẢN PHẨM</h3>
     @for($i=0;$i<count($sidebar['categoryProducts']);$i++)
         @if($sidebar['categoryProducts'][$i]->level==0)
