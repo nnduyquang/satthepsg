@@ -23,7 +23,7 @@
             <li>
                 <h4 class="ht-name">Thép Khánh Nam</h4>
                 <div><i class="fas fa-phone-square" style="color:#004792"></i> 0938.318.678</div>
-                <div><i class="fas fa-phone-square" style="color:#004792"></i> 0914.675.777</div>
+                <div><i class="fas fa-phone-square" style="color:#004792"></i> 0982.515.777</div>
                 <div><i class="fas fa-envelope-square" style="color:#004792"></i> vlxdtaysaigon@gmail.com</div>
             </li>
         </ul>

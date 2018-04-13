@@ -4,7 +4,7 @@
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-7 justify-content-left align-self-center text-left">
-                        <span><i class="fa fa-phone" aria-hidden="true"></i> 0938.318.678 - 0914.675.777</span>
+                        <span><i class="fa fa-phone" aria-hidden="true"></i> 0938.318.678 - 0982.515.777</span>
                         {{--<span><i class="fa fa-home" aria-hidden="true"></i> 55/4 KP3 Hà Huy Giáp, Q.12, TPHCM</span>--}}
                     </div>
                     {{--<div class="col-md-2 p-0">--}}
